@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.hankyjcheng.colorchooser.fragment.ColorPaletteFragment"/>
+
+        <variable
+            name="activeFragment"
+            type="android.support.v4.app.Fragment"/>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_background_primary">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/title_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="14sp"/>
+
+                <View
+                    android:id="@+id/color_view"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="#FFFFFF"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/red"
+                    android:textColor="@color/color_text_primary"/>
+
+                <TextView
+                    android:id="@+id/red_text_view"
+                    android:layout_width="50dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/color_text_dark"/>
+
+                <SeekBar
+                    android:id="@+id/red_seek_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:layout_marginStart="24dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/green"
+                    android:textColor="@color/color_text_primary"/>
+
+                <TextView
+                    android:id="@+id/green_text_view"
+                    android:layout_width="50dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/color_text_dark"/>
+
+                <SeekBar
+                    android:id="@+id/green_seek_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:layout_marginStart="24dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/blue"
+                    android:textColor="@color/color_text_primary"/>
+
+                <TextView
+                    android:id="@+id/blue_text_view"
+                    android:layout_width="50dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/color_text_dark"/>
+
+                <SeekBar
+                    android:id="@+id/blue_seek_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"/>
+
+            </LinearLayout>
+
+            <com.hankyjcheng.colorchooser.view.ColorWheelView
+                android:id="@+id/color_wheel_view"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal"/>
+
+            <com.hankyjcheng.colorchooser.view.ColorValueView
+                android:id="@+id/color_value_view"
+                android:layout_width="300dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="24dp"
+                android:layout_marginTop="24dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">ColorChooser</string>
+
+    <string name="red">Red</string>
+    <string name="green">Green</string>
+    <string name="blue">Blue</string>
+    <string name="save">Save</string>
+    <string name="color_palette">Color Palette</string>
+    <string name="choose_color_prompt">Choose Color</string>
+    <string name="select_color">Select Color</string>
+
 </resources>

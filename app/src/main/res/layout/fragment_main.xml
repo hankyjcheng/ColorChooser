@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.hankyjcheng.colorchooser.fragment.MainFragment"/>
+
+        <variable
+            name="activeFragment"
+            type="android.support.v4.app.Fragment"/>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_background_primary">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/color_view"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="24dp"
+                android:background="#FFFFFF"/>
+
+            <TextView
+                android:id="@+id/choose_color_button"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginTop="24dp"
+                android:background="?selectableItemBackgroundBorderless"
+                android:gravity="center_vertical"
+                android:paddingEnd="8dp"
+                android:paddingStart="8dp"
+                android:text="@string/choose_color_prompt"
+                android:textColor="@color/color_text_primary"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>
