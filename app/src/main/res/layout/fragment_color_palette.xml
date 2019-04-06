@@ -1,156 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <data>
-
-        <variable
-            name="handler"
-            type="com.hankyjcheng.colorchooser.fragment.ColorPaletteFragment"/>
-
-        <variable
-            name="activeFragment"
-            type="android.support.v4.app.Fragment"/>
-
-    </data>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/color_background_primary">
 
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_margin="16dp">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
+            <View
+                android:id="@+id/color_view"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerHorizontal="true"
+                android:background="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/red_prompt"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:orientation="horizontal">
+                android:text="@string/red"
+                android:textColor="@color/color_text_dark"
+                app:layout_constraintBottom_toBottomOf="@id/red_seek_bar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/red_seek_bar" />
 
-                <TextView
-                    android:id="@+id/title_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:textColor="@color/color_text_primary"
-                    android:textSize="14sp"/>
-
-                <View
-                    android:id="@+id/color_view"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_centerHorizontal="true"
-                    android:background="#FFFFFF"/>
-
-            </RelativeLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/red_text_view"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="24dp"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="16dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/color_text_dark"
+                app:layout_constraintBottom_toBottomOf="@id/red_seek_bar"
+                app:layout_constraintStart_toEndOf="@id/red_prompt"
+                app:layout_constraintTop_toTopOf="@id/red_seek_bar" />
+
+            <android.support.v7.widget.AppCompatSeekBar
+                android:id="@+id/red_seek_bar"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/red_text_view"
+                app:layout_constraintTop_toBottomOf="@id/color_view" />
 
-                <TextView
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/red"
-                    android:textColor="@color/color_text_primary"/>
-
-                <TextView
-                    android:id="@+id/red_text_view"
-                    android:layout_width="50dp"
-                    android:layout_height="32dp"
-                    android:layout_marginStart="16dp"
-                    android:gravity="center_vertical"
-                    android:textColor="@color/color_text_dark"/>
-
-                <SeekBar
-                    android:id="@+id/red_seek_bar"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/green_prompt"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="24dp"
-                android:layout_marginStart="24dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:text="@string/green"
+                android:textColor="@color/color_text_dark"
+                app:layout_constraintBottom_toBottomOf="@id/green_seek_bar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/green_seek_bar" />
 
-                <TextView
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/green"
-                    android:textColor="@color/color_text_primary"/>
-
-                <TextView
-                    android:id="@+id/green_text_view"
-                    android:layout_width="50dp"
-                    android:layout_height="32dp"
-                    android:layout_marginStart="16dp"
-                    android:gravity="center_vertical"
-                    android:textColor="@color/color_text_dark"/>
-
-                <SeekBar
-                    android:id="@+id/green_seek_bar"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/green_text_view"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="24dp"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="16dp"
                 android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:textColor="@color/color_text_dark"
+                app:layout_constraintBottom_toBottomOf="@id/green_seek_bar"
+                app:layout_constraintStart_toEndOf="@id/green_prompt"
+                app:layout_constraintTop_toTopOf="@id/green_seek_bar" />
 
-                <TextView
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/blue"
-                    android:textColor="@color/color_text_primary"/>
+            <android.support.v7.widget.AppCompatSeekBar
+                android:id="@+id/green_seek_bar"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/green_text_view"
+                app:layout_constraintTop_toBottomOf="@id/red_seek_bar" />
 
-                <TextView
-                    android:id="@+id/blue_text_view"
-                    android:layout_width="50dp"
-                    android:layout_height="32dp"
-                    android:layout_marginStart="16dp"
-                    android:gravity="center_vertical"
-                    android:textColor="@color/color_text_dark"/>
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/blue_prompt"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="@string/blue"
+                android:textColor="@color/color_text_dark"
+                app:layout_constraintBottom_toBottomOf="@id/blue_seek_bar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/blue_seek_bar" />
 
-                <SeekBar
-                    android:id="@+id/blue_seek_bar"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"/>
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/blue_text_view"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/color_text_dark"
+                app:layout_constraintBottom_toBottomOf="@id/blue_seek_bar"
+                app:layout_constraintStart_toEndOf="@id/blue_prompt"
+                app:layout_constraintTop_toTopOf="@id/blue_seek_bar" />
 
-            </LinearLayout>
+            <android.support.v7.widget.AppCompatSeekBar
+                android:id="@+id/blue_seek_bar"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/blue_text_view"
+                app:layout_constraintTop_toBottomOf="@id/green_seek_bar" />
 
             <com.hankyjcheng.colorchooser.view.ColorWheelView
                 android:id="@+id/color_wheel_view"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:layout_gravity="center_horizontal"/>
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/blue_seek_bar" />
 
             <com.hankyjcheng.colorchooser.view.ColorValueView
                 android:id="@+id/color_value_view"
                 android:layout_width="300dp"
                 android:layout_height="48dp"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp"
                 android:layout_marginBottom="24dp"
-                android:layout_marginTop="24dp"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/color_wheel_view" />
 
-        </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
 
     </ScrollView>
 
